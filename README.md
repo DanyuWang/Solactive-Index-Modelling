@@ -42,7 +42,15 @@ The model output prices can be found at `export.csv`.
 
 # Index Model 
 
-- The Index Model class is in the  `index_model/index.py` . The object of Index Class has the attributes of stock prices data, index universe
+- The IndexModel class is in the  `index_model/index.py` . The object of Index Class has the attributes of stock prices data, index universe and other default settings. 
+
+- The algorithm for calculating index values locates at `calc_index_level` function of IndexModel class. 
+
+- The algorithm firstly find composition stocks for each month with last month close price. And then calculate index value each month by 
+  $$
+  value \ of\  a\ day = value \ on \ the \ first \ day \ of \ month\times (weights \cdot \\ cumulative \ return \ from  \ the \ first \ day \ of \ month \ of \ each \ selected \ stocks)
+  $$
+  
 
 
 
